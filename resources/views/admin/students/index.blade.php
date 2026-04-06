@@ -143,7 +143,7 @@
                                         <input type="text" id="class_{{ $student->id }}" name="class"
                                             value="{{ old('form_type') == 'edit_' . $student->id ? old('class') : $student->class }}"
                                             class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition duration-200 placeholder-gray-400 text-slate-800"
-                                            placeholder="Contoh: X RPL I" required>
+                                            placeholder="Contoh: XII RPL I" required>
                                         @if($errors->has('class') && old('form_type') == 'edit_' . $student->id)
                                             <p class="text-red-500 text-xs mt-1">{{ $errors->first('class') }}</p>
                                         @endif
@@ -254,10 +254,6 @@
             </div>
 
             <div>
-                <label @if ($students->hasPages()) <div class="px-6 py-4 border-t border-gray-50">
-                            {{ $students->links() }}
-                    </div>
-                @endif for="full_name" class="block text-sm font-bold text-slate-900 mb-2">Nama Siswa</label>
             <input type="text" id="full_name" name="full_name"
                 value="{{ old('form_type') === 'add' ? old('full_name') : '' }}"
                 class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition duration-200 placeholder-gray-400 text-slate-800"
@@ -271,7 +267,7 @@
                 <label for="class" class="block text-sm font-bold text-slate-900 mb-2">Kelas</label>
                 <input type="text" name="class" id="class" value="{{ old('form_type') === 'add' ? old('class') : '' }}"
                     class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition duration-200 placeholder-gray-400 text-slate-800"
-                    placeholder="X RPL I" required>
+                    placeholder="Contoh : XII RPL I" required>
                 @if($errors->has('class') && old('form_type') === 'add')
                     <p class="text-red-500 text-xs mt-1">{{ $errors->first('class') }}</p>
                 @endif

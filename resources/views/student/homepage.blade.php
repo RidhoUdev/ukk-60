@@ -10,7 +10,7 @@
         <div class="absolute -left-10 -bottom-10 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
 
         <div class="relative z-10">
-            <h2 class="text-2xl font-bold mb-2">Selamat Datang, John Doe!</h2>
+            <h2 class="text-2xl font-bold mb-2">Selamat Datang, {{ auth()->user()->full_name }}!</h2>
             <p class="text-primary-100 max-w-xl">
                 Jangan ragu untuk melaporkan kerusakan fasilitas sekolah. Laporanmu sangat berarti untuk kenyamanan belajar
                 kita bersama.
