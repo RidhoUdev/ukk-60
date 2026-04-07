@@ -254,6 +254,7 @@
             </div>
 
             <div>
+                <label for="full_name_{{ $student->id }}" class="block text-sm font-bold text-slate-900 mb-2">Nama Siswa</label>
             <input type="text" id="full_name" name="full_name"
                 value="{{ old('form_type') === 'add' ? old('full_name') : '' }}"
                 class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition duration-200 placeholder-gray-400 text-slate-800"

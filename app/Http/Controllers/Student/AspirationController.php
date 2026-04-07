@@ -21,7 +21,10 @@ class AspirationController extends Controller
                     $query->where(function ($q) use ($search){
                         $q->where('title', 'like', '%' . $search . '%')
                             ->orWhere('description', 'like', '%' . $search . '%')
-                                ->orWhere('location', 'like', '%' . $search . '%');
+                                ->orWhere('location', 'like', '%' . $search . '%')
+                                    ->orWhereHas('category', function ($categoryQuery) use ($search){
+                                        $categoryQuery->where('category_name', 'like', '%' . $search . '%');
+                                    });
                     });
             })
             ->latest()

@@ -44,9 +44,6 @@
                         @error('border-red-500 focus:ring-red-200')@enderror
                         required
                     >
-                    @error('username')
-                        <p class="text-xs text-red-500">{{ $message }}</p>
-                    @enderror
                 </div>
 
                 <div>
@@ -61,6 +58,12 @@
                         placeholder="Masukkan password"
                         required
                     >
+                </div>
+
+                <div>
+                    @error('username')
+                        <p class="text-xs text-red-500">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="pt-4">

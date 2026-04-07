@@ -101,10 +101,27 @@
                     </div>
 
                     <div class="flex items-center justify-between border-t border-gray-50 pt-4">
-                        <span
-                            class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-orange-50 text-orange-600 border border-orange-100">
-                            Menunggu
-                        </span>
+                        @if ($aspiration->status === 'Menunggu')
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-50 text-orange-600">
+                                {{ $aspiration->status }}
+                            </span>
+                        @elseif ($aspiration->status === 'Proses')
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-600">
+                                {{ $aspiration->status }}
+                            </span>
+                        @elseif ($aspiration->status === 'Selesai')
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-50 text-teal-600">
+                                {{ $aspiration->status }}
+                            </span>
+                        @else
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-50 text-red-600">
+                                {{ $aspiration->status }}
+                            </span>
+                        @endif
 
                         <a href="{{ route('siswa.aspirasi.show', $aspiration->id) }}"
                             class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-50 text-slate-400 group-hover:bg-primary group-hover:text-white transition-all duration-300">
